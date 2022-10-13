@@ -7,6 +7,8 @@ CREATE TABLE departments (
 		PRIMARY KEY (dept_no),
 		UNIQUE (dept_name)
 );
+
+
 CREATE TABLE employees (
 		emp_no INT NOT NULL,
 		birth_date DATE NOT NULL,
@@ -189,15 +191,26 @@ FROM employees AS e
 WHERE (e.birth_date BETWEEN "1952-01-01" AND "1955-12-31")
 ORDER BY emp_no;
 
+
+
+
 -- Use Dictinct with Orderby to remove duplicate rows
 SELECT DISTINCT ON (ri.emp_no) ri.emp_no,
 ri.first_name,
 ri.last_name,
 ri.title
 
+
+
+
 INTO unique_titles
 FROM retirees_titles AS rt
 ORDER BY emp_no, to_date DESC;
+
+
+
+
+
 
 -- Deliverable 2
 
